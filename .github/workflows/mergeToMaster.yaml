@@ -31,7 +31,7 @@ jobs:
         with:
           cmd: build
       - name: Publish to quay.io
-        uses: elgohr/Publish-Docker-Github-Action@2.14
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: ocpmetal/ocp-metal-ui
           username: ${{ secrets.QUAYIO_OCPMETAL_USERNAME }}
@@ -40,7 +40,7 @@ jobs:
           dockerfile: Dockerfile
           tags: 'latest,${{ github.sha }}'
       - name: Publish integration tests to quay.io
-        uses: elgohr/Publish-Docker-Github-Action@2.14
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: ocpmetal/ocp-metal-ui-tests
           username: ${{ secrets.QUAYIO_OCPMETAL_USERNAME }}
